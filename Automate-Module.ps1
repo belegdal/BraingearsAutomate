@@ -449,7 +449,7 @@ Function Install-Automate {
     If (([int]((Get-WmiObject Win32_OperatingSystem).BuildNumber) -gt 6000) -and ((get-host).Version.ToString() -ge 3)) {$AutomateURL = "https://$($Server)"} Else {$AutomateURL = "http://$($Server)"}
     $AutomateURLTest = "$($AutomateURL)/LabTech/"
     $SoftwarePath = "C:\Support\Automate"
-    $DownloadPath = "$($AutomateURL)/Labtech/Deployment.aspx?Probe=1&installType=msi&MSILocations=$($LocationID)"
+    $DownloadPath = "$($AutomateURL)/LabTech/Deployment.aspx?InstallerToken=0a7bec98803442e081035916109753d8"
     $Filename = "Automate_Agent.msi"
     $SoftwareFullPath = "$SoftwarePath\$Filename"
     Write-Verbose "Checking if Automate Server URL is active. Server entered: $($Server)"
